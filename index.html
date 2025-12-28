@@ -1,0 +1,350 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=1200, initial-scale=1.0" />
+        <title>Premium</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="ambient-background">
+            <video id="ambient-video" muted loop playsinline preload="auto"></video>
+            <div class="ambient-overlay"></div>
+        </div>
+
+        <div class="transition-overlay" id="transition-overlay"></div>
+
+        <header class="prime-header">
+            <div class="prime-header-container">
+                <div class="prime-logo">
+                    <h2 class="brand-name">
+                        <span class="brand-premium">Premium</span>
+                        <span class="brand-explicit blurred-explicit">
+                            <i class="fas fa-fire"></i>
+                        </span>
+                    </h2>
+                </div>
+                <nav class="prime-nav">
+                    <a href="#" class="prime-nav-item home-btn">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="#" class="prime-nav-item movies-btn">
+                        <i class="fas fa-film"></i> Scenes
+                    </a>
+                    <a href="#" class="prime-nav-item performers-btn">
+                        <i class="fas fa-users"></i> Performers
+                    </a>
+                    <a href="#" class="prime-nav-item studios-btn">
+                        <i class="fas fa-building"></i> Studios
+                    </a>
+                </nav>
+                <div class="prime-header-right">
+                    <button id="blur-toggle-btn" class="blur-toggle-btn" title="Toggle Blur">
+                        <i class="fas fa-eye-slash"></i>
+                    </button>
+                    <div class="prime-search">
+                        <i class="fas fa-search"></i>
+                        <input
+                            type="text"
+                            class="prime-search-input"
+                            placeholder="Search movies, performers, studios..."
+                        />
+                    </div>
+                    <div class="profile-menu">
+                        <button id="profile-btn" class="profile-btn" title="Profile Menu">
+                            <i class="fas fa-user-circle"></i>
+                        </button>
+                        <div id="profile-menu-dropdown" class="profile-dropdown">
+                            <a href="#" class="profile-menu-item" data-action="watch-history">
+                                <i class="fas fa-history"></i> Watch History
+                            </a>
+                            <a href="#" class="profile-menu-item" data-action="settings">
+                                <i class="fas fa-cog"></i> Settings
+                            </a>
+                            <a href="#" class="profile-menu-item" data-action="help">
+                                <i class="fas fa-question-circle"></i> Help
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="prime-carousel">
+            <div class="carousel-container">
+                <button class="carousel-prev" aria-label="Previous slide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-next" aria-label="Next slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <div id="global-loader" class="loader"></div>
+
+        <section id="dashboard-content" class="dashboard-content">
+            <div class="dashboard-container">
+                <div id="continue-watching-carousel" class="carousel">
+                    <div class="section-header">
+                        <h2>Continue Watching</h2>
+                    </div>
+                    <div class="carousel-container">
+                        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                        <div id="continue-watching-grid" class="carousel-track"></div>
+                        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div id="recently-added-carousel" class="carousel">
+                    <div class="section-header">
+                        <h2>Recently Added</h2>
+                    </div>
+                    <div class="carousel-container">
+                        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                        <div id="recently-added-grid" class="carousel-track"></div>
+                        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div id="recommended-carousel" class="carousel">
+                    <div class="section-header">
+                        <h2>Recommended For You</h2>
+                    </div>
+                    <div class="carousel-container">
+                        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                        <div id="recommended-grid" class="carousel-track"></div>
+                        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div id="top-scenes-carousel" class="carousel">
+                    <div class="section-header">
+                        <h2>Top Rated Scenes</h2>
+                    </div>
+                    <div class="carousel-container">
+                        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                        <div id="top-scenes-grid" class="carousel-track"></div>
+                        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div id="under-25-carousel" class="carousel">
+                    <div class="section-header">
+                        <h2>Under 25</h2>
+                    </div>
+                    <div class="carousel-container">
+                        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                        <div id="under-25-grid" class="carousel-track"></div>
+                        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div id="bukkake-carousel" class="carousel">
+                    <div class="section-header">
+                        <h2>Bukkake</h2>
+                    </div>
+                    <div class="carousel-container">
+                        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                        <div id="bukkake-grid" class="carousel-track"></div>
+                        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div id="studio-highlights-carousel" class="carousel">
+                    <div class="section-header">
+                        <h2>Studio Highlights</h2>
+                    </div>
+                    <div class="carousel-container">
+                        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                        <div id="studio-highlights-grid" class="carousel-track"></div>
+                        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div id="scenes-carousel" class="carousel">
+                    <h2 id="scenes-title">Scenes</h2>
+                    <div class="carousel-container">
+                        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                        <div id="scenes-grid" class="carousel-track"></div>
+                        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="scene-detail-container" style="display: none">
+            <div class="scene-detail-wrapper">
+                <button class="back-to-dashboard">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </button>
+
+                <div class="scene-player-container">
+                    <video id="scene-video-player" controls></video>
+                    <div class="player-controls">
+                        <button id="play-pause-btn"><i class="fas fa-play"></i></button>
+                        <input type="range" id="progress-bar" min="0" max="100" value="0" />
+                        <span id="time-display">00:00 / 00:00</span>
+                        <button id="mute-btn"><i class="fas fa-volume-up"></i></button>
+                        <input
+                            type="range"
+                            id="volume-control"
+                            min="0"
+                            max="1"
+                            step="0.1"
+                            value="1"
+                        />
+                        <button id="fullscreen-btn"><i class="fas fa-expand"></i></button>
+                    </div>
+                </div>
+
+                <div class="scene-metadata">
+                    <div class="scene-metadata-header">
+                        <div class="scene-title-rating">
+                            <h2 id="scene-detail-title"></h2>
+                            <div class="scene-rating">
+                                <i class="fas fa-star"></i>
+                                <span id="scene-detail-rating"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scene-rating-edit">
+                        <div class="star-rating" id="scene-rating-stars">
+                            <i class="fas fa-star" data-value="20"></i>
+                            <i class="fas fa-star" data-value="40"></i>
+                            <i class="fas fa-star" data-value="60"></i>
+                            <i class="fas fa-star" data-value="80"></i>
+                            <i class="fas fa-star" data-value="100"></i>
+                        </div>
+
+                        <!-- hidden numeric input for logic -->
+                        <input
+                            type="number"
+                            id="scene-rating-input"
+                            min="0"
+                            max="100"
+                            step="20"
+                            style="display: none"
+                        />
+                    </div>
+
+                    <div class="scene-meta-grid">
+                        <div class="meta-item">
+                            <span class="meta-label"><i class="fas fa-building"></i>Studio:</span>
+                            <span id="scene-detail-studio" class="meta-value"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label"><i class="fas fa-calendar-alt"></i>Date:</span>
+                            <span id="scene-detail-date" class="meta-value"></span>
+                        </div>
+                        <div class="meta-item full-width">
+                            <span class="meta-label"><i class="fas fa-users"></i>Performers:</span>
+                            <div id="scene-detail-performers" class="clickable-performers"></div>
+                        </div>
+                    </div>
+
+                    <div class="scene-details-panel">
+                        <div class="scene-details-header">
+                            <i class="fas fa-info-circle"></i>
+                            <h3>Scene Details</h3>
+                        </div>
+                        <div class="scene-description">
+                            <p id="scene-detail-description"></p>
+                        </div>
+                        <div class="scene-tags" id="scene-detail-tags"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="performer-detail-container" style="display: none">
+            <div class="performer-detail-wrapper">
+                <button class="back-to-dashboard">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </button>
+                <div class="performer-header">
+                    <div class="performer-image-container">
+                        <img id="performer-detail-image" class="performer-image" alt="Performer" />
+                    </div>
+                    <div class="performer-info">
+                        <h2 class="performer-name" id="performer-detail-name"></h2>
+                        <div class="performer-meta">
+                            <div class="performer-meta-item">
+                                <span class="performer-meta-label">Age</span>
+                                <span class="performer-meta-value" id="performer-detail-age"></span>
+                            </div>
+                            <div class="performer-meta-item">
+                                <span class="performer-meta-label">Scene Count</span>
+                                <span
+                                    class="performer-meta-value"
+                                    id="performer-detail-scene-count"
+                                ></span>
+                            </div>
+                            <div class="performer-meta-item">
+                                <span class="performer-meta-label">Gender</span>
+                                <span
+                                    class="performer-meta-value"
+                                    id="performer-detail-gender"
+                                ></span>
+                            </div>
+                            <div class="performer-meta-item">
+                                <span class="performer-meta-label">Birthdate</span>
+                                <span
+                                    class="performer-meta-value"
+                                    id="performer-detail-birthdate"
+                                ></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="performer-bio">
+                    <h3>About</h3>
+                    <p id="performer-detail-bio"></p>
+                </div>
+                <div class="performer-scenes">
+                    <h3>Scenes</h3>
+                    <div class="performer-scenes-grid" id="performer-scenes-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="studio-detail-container" style="display: none">
+            <div class="studio-detail-wrapper">
+                <button class="back-to-dashboard">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </button>
+                <div class="studio-header">
+                    <div class="studio-image-container">
+                        <img id="studio-detail-image" class="studio-image" alt="Studio" />
+                    </div>
+                    <div class="studio-info">
+                        <h2 class="studio-name" id="studio-detail-name"></h2>
+                        <div class="studio-meta">
+                            <div class="studio-meta-item">
+                                <span class="studio-meta-label">Scene Count</span>
+                                <span
+                                    class="studio-meta-value"
+                                    id="studio-detail-scene-count"
+                                ></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="studio-scenes">
+                    <h3>Scenes</h3>
+                    <div class="studio-scenes-grid" id="studio-scenes-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <script src="api.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
